@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f1e9">
+<title>Nevo Studio | מתנות עם חריטה אישית</title>
+<style>
+:root{--ink:#28332f;--sage:#87988a;--cream:#f5f1e9;--sand:#e8dfd1;--muted:#6d746d;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,"Heebo",sans-serif;line-height:1.6}
+header{padding:18px 6vw;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #e5ded2;background:#faf8f3;position:sticky;top:0;z-index:5}
+.logo{font-family:Georgia,serif;font-size:27px;letter-spacing:1px}.logo small{display:block;font:11px Arial;letter-spacing:3px;text-align:center;color:var(--muted)}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--ink);text-decoration:none;font-size:14px}
+.hero{padding:76px 6vw 68px;background:linear-gradient(120deg,#e8e4d8,#f7f3eb 60%,#dfe6dc);text-align:center}
+.eyebrow{letter-spacing:2px;color:#68796d;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.15;margin:12px auto;max-width:800px}.hero p{max-width:650px;margin:16px auto 26px;color:#59635c;font-size:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:#718778;color:white;text-decoration:none;padding:13px 24px;border-radius:30px;font-weight:bold;border:0;cursor:pointer}.btn.outline{background:transparent;border:1px solid #718778;color:#526858}
+section{padding:54px 6vw}.section-head{text-align:center;margin-bottom:30px}.section-head h2{font-size:30px;margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
+.filters{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:24px 0 30px}.filter{border:1px solid #c9cfc6;background:transparent;padding:8px 16px;border-radius:25px;color:var(--ink);cursor:pointer}.filter.active{background:var(--ink);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1200px;margin:auto}
+.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 5px 22px #4a4a3a10;display:flex;flex-direction:column}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#e7e0d5}.gallery img{width:100%;height:220px;object-fit:cover}.gallery.single{grid-template-columns:1fr}.gallery.single img{height:280px}
+.content{padding:20px;display:flex;flex-direction:column;flex:1}.tag{font-size:11px;color:#718778;font-weight:bold;letter-spacing:.5px}.content h3{font-size:21px;margin:5px 0}.content p{color:#626b63;margin:0 0 14px;font-size:14px}.price{font-size:19px;font-weight:bold;margin-top:auto;padding-top:8px}.subprice{font-size:13px;color:#69746b}.colors{font-size:13px;color:#68746b;margin:6px 0 12px}
+.notice{max-width:900px;margin:auto;text-align:center;background:#e9e5d9;border-radius:18px;padding:34px 24px}.notice h2{margin:0 0 8px}.notice p{color:#59645c}
+footer{padding:40px 6vw;background:#28332f;color:#f5f1e9;text-align:center}footer p{color:#d3d9d1;margin:5px}
+.wa{position:fixed;bottom:18px;right:18px;z-index:10;background:#20b85a;color:white;text-decoration:none;padding:13px 19px;border-radius:30px;box-shadow:0 5px 18px #0003;font-weight:bold;display:flex;align-items:center;gap:8px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}nav{display:none}}
+@media(max-width:560px){header{padding:13px 5vw}.grid{grid-template-columns:1fr}.gallery img{height:190px}section{padding:42px 5vw}.hero{padding:58px 5vw}.wa{left:14px;right:14px;justify-content:center}.content{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="logo">Nevo Studio<small>PERSONALIZED WITH LOVE</small></div><nav><a href="#gifts">המתנות שלנו</a><a href="#about">קצת עלינו</a><a href="#contact">יצירת קשר</a></nav></header>
+<div class="hero"><div class="eyebrow">מתנות אישיות • חריטה בלייזר</div><h1>מתנה קטנה,<br>עם משמעות שנשארת</h1><p>מבחר מתנות מעוצבות עם שם, תמונה או הקדשה אישית — לילדים, למשפחה ולצוותי חינוך.</p><a class="btn" href="#gifts">לצפייה בקטלוג</a></div>
+<section id="gifts">
+<div class="section-head"><h2>הקטלוג שלנו</h2><p>בחרו מתנה, צבע ועיצוב — ואנחנו נדאג להפוך אותה לאישית.</p></div>
+<div class="filters"><button class="filter active" data-filter="all">הכל</button><button class="filter" data-filter="family">יום המשפחה</button><button class="filter" data-filter="team">מתנות לצוות</button><button class="filter" data-filter="home">לבית ולילדים</button></div>
+<div class="grid">
+<article class="card" data-category="team"><div class="gallery single"><img src="assets/door-sign-rect.jpeg" onerror="this.style.display='none'" alt="שלט פרספקס לדלת"></div><div class="content"><span class="tag">לבית ולילדים</span><h3>שלט לדלת מפרספקס</h3><p>שלט אישי לחדר הילדים או לבית, עם שם או שם משפחה וחריטה בלייזר.</p><div class="price">20 ₪ ליחידה</div></div></article>
+<article class="card" data-category="family"><div class="gallery"><img src="assets/puzzle-wood-1.jpeg" alt="פאזל עץ אישי"><img src="assets/puzzle-wood-2.jpeg" alt="פאזל עץ עם תמונה"></div><div class="content"><span class="tag">יום המשפחה</span><h3>פאזל עץ עם תמונה אישית</h3><p>פאזל מעץ עם תמונת הילד או תמונה משפחתית, בתוספת חריטה אישית.</p><div class="price">10×10 ס״מ – 11 ₪</div><div class="subprice">10×30 ס״מ – 15 ₪</div></div></article>
+<article class="card" data-category="team"><div class="gallery"><img src="assets/thermos-cups-1.jpeg" alt="תרמוס ושלוש כוסות"><img src="assets/thermos-cups-2.jpeg" alt="מארז תרמוס וכוסות"></div><div class="content"><span class="tag">מתנה לצוות</span><h3>מארז תרמוס ו־3 כוסות</h3><p>מארז מפנק עם חריטה אישית על פי בחירה.</p><div class="colors">צבעים: לבן, ורוד ותכלת</div><div class="price">70 ₪ ליחידה</div><div class="subprice">בהזמנה מעל 5 יחידות: 60 ₪ ליחידה</div></div></article>
+<article class="card" data-category="family"><div class="gallery"><img src="assets/puzzle-packaging.jpeg" alt="פאזל ארוז כמתנה"><img src="assets/puzzle-detail.jpeg" alt="פרטי פאזל עץ"></div><div class="content"><span class="tag">מתנה אישית</span><h3>פאזל אישי באריזת מתנה</h3><p>מתנה חווייתית עם תמונה אישית, ארוזה באהבה.</p><div class="price">החל מ־11 ₪</div></div></article>
+<article class="card" data-category="home"><div class="gallery single"><img src="assets/door-sign-oval.jpeg" alt="שלט פרספקס אובלי"></div><div class="content"><span class="tag">לבית ולילדים</span><h3>שלט פרספקס בעיצוב אישי</h3><p>מבחר צורות ועיצובים, עם חריטה אישית בלייזר.</p><div class="price">20 ₪ ליחידה</div></div></article>
+<article class="card" data-category="family"><div class="gallery single"><img src="assets/puzzle-gift.jpeg" alt="פאזל אישי ארוז"></div><div class="content"><span class="tag">יום המשפחה</span><h3>פאזל עם תמונת הילד</h3><p>מזכרת אישית שהופכת גם למשחק קטן ומהנה.</p><div class="price">11–15 ₪</div></div></article>
+
+<article class="card" data-category="team"><div class="content"><span class="tag">מתנה לצוות</span><h3>מחברת ועט עם חריטה אישית</h3><p>מחברת ועט עם שם או הקדשה אישית. צבעי המחברות: כחול, אפור, ורוד ושחור.</p><div class="price">30 ₪ למארז</div><div class="subprice">בהזמנה מעל 3 יחידות · 1–2 יחידות: 40 ₪ למארז</div></div></article>
+<article class="card" data-category="team"><div class="content"><span class="tag">מתנה לצוות</span><h3>מארז מחברת, עט וכוס תרמית</h3><p>מארז אישי הכולל מחברת, עט וכוס תרמית עם חריטה. צבעי המחברת: כחול, אפור, ורוד ושחור. צבעי הכוס: לבן, כסוף וורוד.</p><div class="price">70 ₪ למארז</div><div class="subprice">1–2 יחידות: 75 ₪ למארז</div></div></article>
+<article class="card" data-category="team"><div class="content"><span class="tag">מתנה לצוות</span><h3>מעמד שולחני משולב מבמבוק</h3><p>מעמד מתקפל וחוסך מקום, עם טעינה אלחוטית QI בעוצמת 15W, פלטת חימום לספל ומקום לכלי כתיבה. כולל חריטה אישית. מידות: 29×9×10 ס״מ.</p><div class="price">70 ₪</div><div class="subprice">בתוספת כוס: 90 ₪</div></div></article>
+<article class="card" data-category="team"><div class="content"><span class="tag">מלאי מוגבל</span><h3>בקבוק תרמי עם הקדשה</h3><p>בקבוק לשמירה על חום וקור, עם הקדשה אישית בחריטה.</p><div class="price">20 ₪</div><div class="subprice">נותרו 5 יחידות במלאי</div></div></article>
+<article class="card" data-category="family"><div class="content"><span class="tag">מתנה לבית</span><h3>קרש חיתוך עם הקדשה אישית</h3><p>קרש חיתוך עם חריטה אישית — מתנה שימושית ומרגשת לבית.</p><div class="price">50 ₪</div></div></article>
+<article class="card" data-category="team"><div class="content"><span class="tag">מתנה לצוות</span><h3>מארז מחברת, עט ובקבוק</h3><p>מארז שחור בלבד הכולל מחברת, עט ובקבוק, עם חריטה אישית והקדשה.</p><div class="price">60 ₪ למארז</div></div></article>
+<article class="card" data-category="family"><div class="content"><span class="tag">יום המשפחה</span><h3>שלט עץ לבית</h3><p>שלט עץ אישי לכל ילד, עם חריטה בלייזר. ניתן לשלב גם תמונה אישית של הילד.</p><div class="price">20 ₪ לילד</div><div class="subprice">בהזמנה של 7 ילדים ומעלה</div></div></article>
+<article class="card" data-category="family"><div class="content"><span class="tag">יום המשפחה</span><h3>קופת חיסכון מעץ בצורת בית</h3><p>מתנה ערכית ואישית עם חריטה לכל ילד.</p><div class="price">14 ₪ ליחידה</div><div class="subprice">בהזמנה מעל 35 יחידות: 12.50 ₪ ליחידה</div></div></article>
+</div>
+</section>
+<section id="about"><div class="notice"><h2>וזה עוד לא הכל! 🤍</h2><p>הקטלוג ממשיך להתעדכן ולהתרחב, ויש עוד המון רעיונות, מוצרים והפתעות בדרך. כל המוצרים ניתנים להתאמה אישית ולחריטה בלייזר, באהבה ובמחשבה על כל פרט.</p><p><strong>לא מצאתם בדיוק את מה שחיפשתם? דברו איתנו ונשמח להתאים לכם מתנה אישית.</strong></p><a class="btn" href="https://wa.me/972508562475?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5%20%D7%9C%D7%92%D7%91%D7%99%20%D7%9E%D7%AA%D7%A0%D7%94">מתייעצים בוואטסאפ</a></div></section>
+<footer id="contact"><div class="logo">Nevo Studio</div><p>מתנות אישיות עם חריטה בלייזר</p><p>לפרטים והזמנות: 050-856-2475</p></footer>
+<a class="wa" href="https://wa.me/972508562475?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%A7%D7%98%D7%9C%D7%95%D7%92%20%D7%A9%D7%9C%20Nevo%20Studio" target="_blank" rel="noopener">☏ דברו איתנו בוואטסאפ</a>
+<script>
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ const f=btn.dataset.filter;document.querySelectorAll('.card').forEach(card=>card.style.display=(f==='all'||card.dataset.category===f)?'flex':'none');
+}));
+</script>
+</body></html>
