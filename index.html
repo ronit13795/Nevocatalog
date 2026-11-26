@@ -20,6 +20,7 @@ section{padding:54px 6vw}.section-head{text-align:center;margin-bottom:30px}.sec
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#e7e0d5}.gallery img{width:100%;height:220px;object-fit:cover}.gallery.single{grid-template-columns:1fr}.gallery.single img{height:280px}
 .content{padding:20px;display:flex;flex-direction:column;flex:1}.tag{font-size:11px;color:#718778;font-weight:bold;letter-spacing:.5px}.content h3{font-size:21px;margin:5px 0}.content p{color:#626b63;margin:0 0 14px;font-size:14px}.price{font-size:19px;font-weight:bold;margin-top:auto;padding-top:8px}.subprice{font-size:13px;color:#69746b}.colors{font-size:13px;color:#68746b;margin:6px 0 12px}
 .notice{max-width:900px;margin:auto;text-align:center;background:#e9e5d9;border-radius:18px;padding:34px 24px}.notice h2{margin:0 0 8px}.notice p{color:#59645c}
+.catalog-start{max-width:900px;margin:0 auto 34px;background:#fff;border-radius:18px;padding:28px;box-shadow:0 5px 22px #4a4a3a10}.catalog-start h3{margin:0 0 14px;text-align:center;font-size:21px}.choice-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.choice{border:1px solid #c9cfc6;background:#fff;padding:10px 18px;border-radius:24px;color:var(--ink);cursor:pointer;font:inherit}.choice.selected{background:var(--ink);color:#fff}.qty-fields{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px}.qty-fields label{display:flex;align-items:center;gap:8px}.qty-fields input{width:85px;padding:10px;border:1px solid #c9cfc6;border-radius:10px;font:inherit}.wizard-actions{text-align:center;margin-top:20px}.wizard-message{text-align:center;color:var(--muted);margin:12px 0 0}.catalog-results[hidden],.qty-fields[hidden]{display:none}
 footer{padding:40px 6vw;background:#28332f;color:#f5f1e9;text-align:center}footer p{color:#d3d9d1;margin:5px}
 .wa{position:fixed;bottom:18px;right:18px;z-index:10;background:#20b85a;color:white;text-decoration:none;padding:13px 19px;border-radius:30px;box-shadow:0 5px 18px #0003;font-weight:bold;display:flex;align-items:center;gap:8px}
 @media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}nav{display:none}}
@@ -31,8 +32,18 @@ footer{padding:40px 6vw;background:#28332f;color:#f5f1e9;text-align:center}foote
 <div class="hero"><div class="eyebrow">מתנות אישיות • חריטה בלייזר</div><h1>מתנה קטנה,<br>עם משמעות שנשארת</h1><p>מבחר מתנות מעוצבות עם שם, תמונה או הקדשה אישית — לילדים, למשפחה ולצוותי חינוך.</p><a class="btn" href="#gifts">לצפייה בקטלוג</a></div>
 <section id="gifts">
 <div class="section-head"><h2>הקטלוג שלנו</h2><p>בחרו מתנה, צבע ועיצוב — ואנחנו נדאג להפוך אותה לאישית.</p></div>
+<div class="catalog-start" id="catalogWizard">
+ <h3>לאיזה אירוע מחפשים מתנות?</h3>
+ <div class="choice-row" id="eventChoices"><button class="choice" data-event="team">יום המחנך</button><button class="choice" data-event="family">יום המשפחה</button><button class="choice" data-event="both">לשניהם</button></div>
+ <div class="qty-fields" id="qtyFields" hidden>
+  <label id="teamQtyLabel">לאנשי צוות <input id="teamQty" type="number" min="1" step="1" inputmode="numeric" placeholder="כמות"></label>
+  <label id="familyQtyLabel">לילדים <input id="familyQty" type="number" min="1" step="1" inputmode="numeric" placeholder="כמות"></label>
+ </div>
+ <div class="wizard-actions"><button class="btn" id="showCatalog" hidden>הציגו לי את המתנות</button></div><p class="wizard-message" id="wizardMessage" aria-live="polite">בחרו אירוע כדי להמשיך.</p>
+</div>
+<div class="catalog-results" id="catalogResults" hidden>
 <div class="filters"><button class="filter active" data-filter="all">הכל</button><button class="filter" data-filter="family">יום המשפחה</button><button class="filter" data-filter="team">מתנות לצוות</button><button class="filter" data-filter="home">לבית ולילדים</button></div>
-<div class="grid">
+<div class="grid" id="productGrid">
 <article class="card" data-category="team"><div class="gallery single"><img src="assets/door-sign-rect.jpeg" onerror="this.style.display='none'" alt="שלט פרספקס לדלת"></div><div class="content"><span class="tag">לבית ולילדים</span><h3>שלט לדלת מפרספקס</h3><p>שלט אישי לחדר הילדים או לבית, עם שם או שם משפחה וחריטה בלייזר.</p><div class="price">20 ₪ ליחידה</div></div></article>
 <article class="card" data-category="family"><div class="gallery"><img src="assets/puzzle-wood-1.jpeg" alt="פאזל עץ אישי"><img src="assets/puzzle-wood-2.jpeg" alt="פאזל עץ עם תמונה"></div><div class="content"><span class="tag">יום המשפחה</span><h3>פאזל עץ עם תמונה אישית</h3><p>פאזל מעץ עם תמונת הילד או תמונה משפחתית, בתוספת חריטה אישית.</p><div class="price">10×10 ס״מ – 11 ₪</div><div class="subprice">10×30 ס״מ – 15 ₪</div></div></article>
 <article class="card" data-category="team"><div class="gallery"><img src="assets/thermos-cups-1.jpeg" alt="תרמוס ושלוש כוסות"><img src="assets/thermos-cups-2.jpeg" alt="מארז תרמוס וכוסות"></div><div class="content"><span class="tag">מתנה לצוות</span><h3>מארז תרמוס ו־3 כוסות</h3><p>מארז מפנק עם חריטה אישית על פי בחירה.</p><div class="colors">צבעים: לבן, ורוד ותכלת</div><div class="price">70 ₪ ליחידה</div><div class="subprice">בהזמנה מעל 5 יחידות: 60 ₪ ליחידה</div></div></article>
@@ -48,15 +59,41 @@ footer{padding:40px 6vw;background:#28332f;color:#f5f1e9;text-align:center}foote
 <article class="card" data-category="team"><div class="content"><span class="tag">מתנה לצוות</span><h3>מארז מחברת, עט ובקבוק</h3><p>מארז שחור בלבד הכולל מחברת, עט ובקבוק, עם חריטה אישית והקדשה.</p><div class="price">60 ₪ למארז</div></div></article>
 <article class="card" data-category="family"><div class="content"><span class="tag">יום המשפחה</span><h3>שלט עץ לבית</h3><p>שלט עץ אישי לכל ילד, עם חריטה בלייזר. ניתן לשלב גם תמונה אישית של הילד.</p><div class="price">20 ₪ לילד</div><div class="subprice">בהזמנה של 7 ילדים ומעלה</div></div></article>
 <article class="card" data-category="family"><div class="content"><span class="tag">יום המשפחה</span><h3>קופת חיסכון מעץ בצורת בית</h3><p>מתנה ערכית ואישית עם חריטה לכל ילד.</p><div class="price">14 ₪ ליחידה</div><div class="subprice">בהזמנה מעל 35 יחידות: 12.50 ₪ ליחידה</div></div></article>
-</div>
+</div></div>
 </section>
 <section id="about"><div class="notice"><h2>וזה עוד לא הכל! 🤍</h2><p>הקטלוג ממשיך להתעדכן ולהתרחב, ויש עוד המון רעיונות, מוצרים והפתעות בדרך. כל המוצרים ניתנים להתאמה אישית ולחריטה בלייזר, באהבה ובמחשבה על כל פרט.</p><p><strong>לא מצאתם בדיוק את מה שחיפשתם? דברו איתנו ונשמח להתאים לכם מתנה אישית.</strong></p><a class="btn" href="https://wa.me/972508562475?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5%20%D7%9C%D7%92%D7%91%D7%99%20%D7%9E%D7%AA%D7%A0%D7%94">מתייעצים בוואטסאפ</a></div></section>
 <footer id="contact"><div class="logo">Nevo Studio</div><p>מתנות אישיות עם חריטה בלייזר</p><p>לפרטים והזמנות: 050-856-2475</p></footer>
 <a class="wa" href="https://wa.me/972508562475?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%A7%D7%98%D7%9C%D7%95%D7%92%20%D7%A9%D7%9C%20Nevo%20Studio" target="_blank" rel="noopener">☏ דברו איתנו בוואטסאפ</a>
 <script>
+const eventChoices=document.querySelectorAll('.choice'),qtyFields=document.getElementById('qtyFields'),teamQtyLabel=document.getElementById('teamQtyLabel'),familyQtyLabel=document.getElementById('familyQtyLabel'),showCatalog=document.getElementById('showCatalog'),wizardMessage=document.getElementById('wizardMessage');
+let selectedEvent='',activeFilter='all';
+eventChoices.forEach(btn=>btn.addEventListener('click',()=>{
+ selectedEvent=btn.dataset.event;eventChoices.forEach(b=>b.classList.toggle('selected',b===btn));
+ qtyFields.hidden=false;teamQtyLabel.hidden=selectedEvent==='family';familyQtyLabel.hidden=selectedEvent==='team';showCatalog.hidden=false;
+ document.getElementById('teamQty').required=selectedEvent!=='family';document.getElementById('familyQty').required=selectedEvent!=='team';wizardMessage.textContent='כמה מתנות צריך? אפשר לעדכן את הכמות בכל רגע.';
+}));
+showCatalog.addEventListener('click',()=>{
+ const tq=Number(document.getElementById('teamQty').value),fq=Number(document.getElementById('familyQty').value),needTeam=selectedEvent!=='family',needFamily=selectedEvent!=='team';
+ if(!selectedEvent||(needTeam&&(!Number.isInteger(tq)||tq<1))||(needFamily&&(!Number.isInteger(fq)||fq<1))){wizardMessage.textContent='נא להזין כמות של 1 ומעלה לכל קבוצה שבחרתם.';return;}
+ document.querySelectorAll('.card').forEach(card=>{
+  const category=card.dataset.category,visible=(category==='team'&&needTeam)||(category!=='team'&&needFamily);card.style.display=visible?'flex':'none';
+  const price=card.querySelector('.price'),sub=card.querySelector('.subprice');if(!price)return;
+  if(card.dataset.basePrice){price.textContent=card.dataset.basePrice;sub.textContent=card.dataset.baseSub||'';}
+  if(category==='team'&&needTeam){
+   if(card.querySelector('h3')?.textContent.includes('תרמוס ו־3 כוסות')){price.textContent=tq>5?'60 ₪ ליחידה':'70 ₪ ליחידה';sub.textContent=tq>5?'מחיר להזמנה מעל 5 יחידות':'';}
+   if(card.querySelector('h3')?.textContent.includes('מחברת ועט עם חריטה')){price.textContent=tq<=2?'40 ₪ למארז':'30 ₪ למארז';sub.textContent=tq<=2?'מחיר ל־1–2 יחידות':'מחיר להזמנה מעל 3 יחידות';}
+   if(card.querySelector('h3')?.textContent.includes('מחברת, עט וכוס תרמית')){price.textContent=tq<=2?'75 ₪ למארז':'70 ₪ למארז';sub.textContent=tq<=2?'מחיר ל־1–2 יחידות':'';}
+  }
+  if(category!=='team'&&needFamily){
+   if(card.querySelector('h3')?.textContent.includes('קופת חיסכון')){price.textContent=fq>35?'12.50 ₪ ליחידה':'14 ₪ ליחידה';sub.textContent=fq>35?'מחיר להזמנה מעל 35 יחידות':'';}
+   if(card.querySelector('h3')?.textContent.includes('שלט עץ לבית')){price.textContent=fq>=7?'20 ₪ לילד':'20 ₪ לילד';sub.textContent=fq>=7?'מחיר להזמנה של 7 ילדים ומעלה':'המחיר שצוין בקטלוג חל מהזמנה של 7 ילדים';}
+  }
+ });
+ document.getElementById('catalogResults').hidden=false;wizardMessage.textContent='המתנות שמתאימות לבחירה שלכם מוצגות כאן.';document.getElementById('catalogResults').scrollIntoView({behavior:'smooth',block:'start'});
+});
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
- const f=btn.dataset.filter;document.querySelectorAll('.card').forEach(card=>card.style.display=(f==='all'||card.dataset.category===f)?'flex':'none');
+ activeFilter=btn.dataset.filter;const needTeam=selectedEvent!=='family',needFamily=selectedEvent!=='team';document.querySelectorAll('.card').forEach(card=>{const category=card.dataset.category,eligible=(category==='team'&&needTeam)||(category!=='team'&&needFamily);card.style.display=eligible&&(activeFilter==='all'||category===activeFilter)?'flex':'none';});
 }));
 </script>
 </body></html>
