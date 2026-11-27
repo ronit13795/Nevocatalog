@@ -82,7 +82,7 @@ showCatalog.addEventListener('click',()=>{
    if(card.querySelector('h3')?.textContent.includes('מחברת, עט וכוס תרמית')){price.textContent=tq<=2?'75 ₪ למארז':'70 ₪ למארז';sub.textContent=tq<=2?'מחיר ל־1–2 יחידות':'';}
   }
   if(category!=='team'&&needFamily){
-   if(card.querySelector('h3')?.textContent.includes('קופת חיסכון')){price.textContent=fq>35?'12.50 ₪ ליחידה':'14 ₪ ליחידה';sub.textContent=fq>35?'מחיר להזמנה מעל 35 יחידות':'';}
+   if(card.querySelector('h3')?.textContent.includes('קופת חיסכון')){price.textContent=fq>35?'12.50 ₪ ליחידה':'14 ₪ ליחידה';if(sub)sub.textContent=fq>35?'מחיר להזמנה מעל 35 יחידות':'';}
   }
   const item=card.dataset.item;
   if(item==='teacher-vase'){price.textContent=tq>15?'50 ₪ ליחידה':tq>7?'65 ₪ ליחידה':'70 ₪ ליחידה';sub.textContent='מעל 7 יחידות: 65 ₪ · מעל 15 יחידות: 50 ₪ ליחידה';}
