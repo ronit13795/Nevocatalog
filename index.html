@@ -89,11 +89,7 @@ showCatalog.addEventListener('click',()=>{
  document.querySelectorAll('.card').forEach(card=>{
   const category=card.dataset.category,visible=(category==='team'&&needTeam)||(category!=='team'&&needFamily);card.style.display=visible?'flex':'none';
   const price=card.querySelector('.price'),sub=card.querySelector('.subprice');if(!price)return;
-  if(card.dataset.basePrice){price.textContent=card.dataset.basePrice;sub.textContent=card.dataset.baseSub||'';}
-  if(category==='team'&&needTeam){
-   if(card.querySelector('h3')?.textContent.includes('מחברת ועט עם חריטה')){price.textContent=tq<=2?'40 ₪ למארז':tq===3?'המחיר לכמות זו לא צוין':'30 ₪ למארז';sub.textContent=tq<=2?'מחיר ל־1–2 יחידות':tq===3?'במסמך לא צוין מחיר להזמנה של 3 יחידות':'מחיר להזמנה מעל 3 יחידות';}
-   if(card.querySelector('h3')?.textContent.includes('מחברת, עט וכוס תרמית')){price.textContent=tq<=2?'75 ₪ למארז':'70 ₪ למארז';sub.textContent=tq<=2?'מחיר ל־1–2 יחידות':'';}
-  }
+  if(card.dataset.basePrice){price.textContent=card.dataset.basePrice;if(sub)sub.textContent=card.dataset.baseSub||'';}
   const item=card.dataset.item;
   if(item==='teacher-vase'){price.textContent=tq>4?'59 ₪ ליחידה':'65 ₪ ליחידה';if(sub)sub.textContent='';}
   if(item==='cactus-pot'){price.textContent=tq>10?'76 ₪ ליחידה':tq>=4?'80 ₪ ליחידה':'90 ₪ ליחידה';if(sub)sub.textContent='';}
@@ -107,13 +103,13 @@ showCatalog.addEventListener('click',()=>{
   if(item==='wooden-sign'){price.textContent=fq>30?'16 ₪ לילד':fq>20?'18 ₪ לילד':'20 ₪ לילד';if(sub)sub.textContent='';}
   if(item==='wooden-house-bank'){price.textContent=fq>=36?'12.50 ₪ ליחידה':'14 ₪ ליחידה';if(sub)sub.textContent='';}
   if(item==='family-wood-puzzle'){const size=card.querySelector('[data-puzzle-size]').value,paints=card.querySelector('[data-puzzle-paints]').value==='yes',amount=(size==='10x10'?11:15)+(paints?5:0);price.textContent=`${amount} ₪ לפאזל`;if(sub)sub.textContent='';}
-  if(item==='wood-sign'&&needFamily){card.style.display=fq>=7?'flex':'none';price.textContent='20 ₪ לילד';sub.textContent='בהזמנה של 7 ילדים ומעלה';}
-  if(item==='speaker'){price.textContent=fq>=11?'30 ₪ ליחידה':'35 ₪ ליחידה';sub.textContent=fq>=11?'מ־11 ילדים: 30 ₪ ליחידה':'עד 10 ילדים: 35 ₪ ליחידה';}
-  if(item==='charity'){price.textContent=fq>=31?'14 ₪ ליחידה':'18 ₪ ליחידה';sub.textContent=fq>=31?'מ־31 ילדים: 14 ₪ ליחידה':'עד 30 ילדים: 18 ₪ ליחידה';}
-  if(item==='concrete'){price.textContent=tq>=6?'100 ₪ ליחידה':tq>=4?'120 ₪ ליחידה':'140 ₪ ליחידה';sub.textContent=tq>=6?'6 ומעלה: 100 ₪ ליחידה':tq>=4?'4–5 יחידות: 120 ₪ ליחידה':'עד 3 יחידות: 140 ₪ ליחידה';}
-  if(item==='board-opener'){price.textContent=tq>=5?'90 ₪ ליחידה':'100 ₪ ליחידה';sub.textContent=tq>=5?'מ־5 יחידות: 90 ₪ ליחידה':'עד 4 יחידות: 100 ₪ ליחידה';}
-  if(item==='board-plate'){price.textContent=tq>=3?'140 ₪ למארז':'150 ₪ למארז';sub.textContent=tq>=3?'מ־3 יחידות: 140 ₪ למארז':'עד 2 יחידות: 150 ₪ למארז';}
-  if(item==='wine'){const wineOption=card.querySelector('[data-wine-option]');price.textContent=`${wineOption.value} ₪ ליחידה`;sub.textContent=wineOption.value==='60'?'ללא פותחן':'כולל פותחן';}
+  if(item==='wood-sign'&&needFamily){card.style.display=fq>=7?'flex':'none';price.textContent='20 ₪ לילד';if(sub)sub.textContent='בהזמנה של 7 ילדים ומעלה';}
+  if(item==='speaker'){price.textContent=fq>=11?'30 ₪ ליחידה':'35 ₪ ליחידה';if(sub)sub.textContent=fq>=11?'מ־11 ילדים: 30 ₪ ליחידה':'עד 10 ילדים: 35 ₪ ליחידה';}
+  if(item==='charity'){price.textContent=fq>=31?'14 ₪ ליחידה':'18 ₪ ליחידה';if(sub)sub.textContent=fq>=31?'מ־31 ילדים: 14 ₪ ליחידה':'עד 30 ילדים: 18 ₪ ליחידה';}
+  if(item==='concrete'){price.textContent=tq>=6?'100 ₪ ליחידה':tq>=4?'120 ₪ ליחידה':'140 ₪ ליחידה';if(sub)sub.textContent=tq>=6?'6 ומעלה: 100 ₪ ליחידה':tq>=4?'4–5 יחידות: 120 ₪ ליחידה':'עד 3 יחידות: 140 ₪ ליחידה';}
+  if(item==='board-opener'){price.textContent=tq>=5?'90 ₪ ליחידה':'100 ₪ ליחידה';if(sub)sub.textContent=tq>=5?'מ־5 יחידות: 90 ₪ ליחידה':'עד 4 יחידות: 100 ₪ ליחידה';}
+  if(item==='board-plate'){price.textContent=tq>=3?'140 ₪ למארז':'150 ₪ למארז';if(sub)sub.textContent=tq>=3?'מ־3 יחידות: 140 ₪ למארז':'עד 2 יחידות: 150 ₪ למארז';}
+  if(item==='wine'){const wineOption=card.querySelector('[data-wine-option]');price.textContent=`${wineOption.value} ₪ ליחידה`;if(sub)sub.textContent=wineOption.value==='60'?'ללא פותחן':'כולל פותחן';}
  });
  document.querySelectorAll('.card').forEach(card=>{
   if(card.style.display==='none')return;
