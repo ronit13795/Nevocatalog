@@ -45,6 +45,7 @@ footer{padding:40px 6vw;background:#28332f;color:#f5f1e9;text-align:center}foote
 <div class="catalog-results" id="catalogResults" hidden>
 <div class="grid" id="productGrid">
 <article class="card" data-category="family"><div class="gallery single"><img src="assets/wooden-home-sign.jpeg" alt="שלט עץ אישי לבית או לחדר"></div><div class="content"><span class="tag">יום המשפחה</span><h3>שלט עץ מושלם לבית או לחדר</h3><p>חריטה אישית לכל ילד, לפי בחירה.</p><div class="price">20 ₪ ליחידה</div></div></article>
+<article class="card" data-category="family" data-item="wooden-house-bank"><div class="gallery"><img src="assets/wooden-house-bank-1.jpeg" alt="קופת חיסכון מעץ בצורת בית עם חריטה ותמונה"><img src="assets/wooden-house-bank-2.jpeg" alt="קופת חיסכון מעץ עם כיתוב לבחירה"><img src="assets/wooden-house-bank-3.jpeg" alt="קופת חיסכון מעץ אישית לילד"><img src="assets/wooden-house-bank-4.jpeg" alt="קופת חיסכון מעץ עם חריטת שם ותמונה"><img src="assets/wooden-house-bank-5.jpeg" alt="קופת חיסכון מעץ בצורת בית בעיצוב אישי"></div><div class="content"><span class="tag">יום המשפחה</span><h3>קופת חיסכון מעץ בצורת בית</h3><p>קופת חיסכון עם חריטה בלייזר וכיתוב לבחירה.</p><div class="price">14 ₪ ליחידה</div><div class="subprice">מעל 10 ילדים: 13 ₪ ליחידה</div></div></article>
 <article class="card" data-category="family" data-item="acrylic-sign"><div class="gallery"><img src="assets/acrylic-sign-rect.jpeg" alt="שלט אקריל מלבני לבית או לחדר בעיצוב אישי"><img src="assets/acrylic-sign-oval.jpeg" alt="שלט אקריל אובלי לבית או לחדר בעיצוב אישי"></div><div class="content"><span class="tag">יום המשפחה</span><h3>שלט לבית או לחדר בעיצוב אישי מאקריל</h3><p>שלט אקריל אישי לבית או לחדר, עם חריטה בעיצוב אישי.</p><div class="price">20 ₪ ליחידה</div></div></article>
 </div></div>
 </section>
@@ -75,6 +76,7 @@ showCatalog.addEventListener('click',()=>{
    if(card.querySelector('h3')?.textContent.includes('קופת חיסכון')){price.textContent=fq>35?'12.50 ₪ ליחידה':'14 ₪ ליחידה';sub.textContent=fq>35?'מחיר להזמנה מעל 35 יחידות':'';}
   }
   const item=card.dataset.item;
+  if(item==='wooden-house-bank'){price.textContent=fq>10?'13 ₪ ליחידה':'14 ₪ ליחידה';sub.textContent=fq>10?'מעל 10 ילדים: 13 ₪ ליחידה':'14 ₪ ליחידה';}
   if(item==='wood-sign'&&needFamily){card.style.display=fq>=7?'flex':'none';price.textContent='20 ₪ לילד';sub.textContent='בהזמנה של 7 ילדים ומעלה';}
   if(item==='speaker'){price.textContent=fq>=11?'30 ₪ ליחידה':'35 ₪ ליחידה';sub.textContent=fq>=11?'מ־11 ילדים: 30 ₪ ליחידה':'עד 10 ילדים: 35 ₪ ליחידה';}
   if(item==='charity'){price.textContent=fq>=31?'14 ₪ ליחידה':'18 ₪ ליחידה';sub.textContent=fq>=31?'מ־31 ילדים: 14 ₪ ליחידה':'עד 30 ילדים: 18 ₪ ליחידה';}
